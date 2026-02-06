@@ -226,6 +226,10 @@ section {
   align-items: center;
 }
 
+.snapshot-title {
+  font-size: 3rem;
+}
+
 .snapshot-divider {
   border: none;
   border-top: 1px solid rgba(0,0,0,0.1);
@@ -575,12 +579,85 @@ section {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile Responsive */
+/* ── Tablet Landscape ── */
+@media (max-width: 1024px) {
+  :root { --section-padding: 6rem 1.5rem; }
+
+  .snapshot { padding: 6rem 0; }
+  .snapshot-container { gap: 3rem; }
+  .amenities { padding: 6rem 0; }
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .neighborhood-grid { gap: 3rem; }
+  .location { padding: 6rem 0; }
+  .location-content { gap: 4rem; }
+  .conversion { padding: 6rem 0; }
+  .vision-quote { padding: 10rem 0; }
+}
+
+/* ── Tablet Portrait / Mobile ── */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 3rem; }
+  :root { --section-padding: 4rem 1.25rem; }
+
+  .container { padding: 0 1.25rem; }
+
+  /* Hero */
+  .hero h1 { font-size: 2.5rem; }
+  .hero .tagline { letter-spacing: 0.2em; font-size: 0.65rem; }
+
+  /* Snapshot */
+  .snapshot { padding: 4rem 0; }
+  .snapshot-title { font-size: 2rem; }
+  .snapshot-container { grid-template-columns: 1fr; gap: 2.5rem; }
+  .snapshot-image { order: -1; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+  /* Amenities */
+  .amenities { padding: 4rem 0; }
+  .amenities-header { margin-bottom: 3rem; }
+  .amenities-header h2 { font-size: 2rem; }
+  .amenities-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .amenity-card { padding: 2rem 1.25rem; }
+
+  /* Neighborhood */
+  .neighborhood { padding: 4rem 0; }
+  .neighborhood-header { margin-bottom: 3rem; }
+  .neighborhood-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Renders */
   .renders-grid { grid-template-columns: 1fr; gap: 2rem; }
   .render-item.stagger { margin-top: 0; }
-  .location-content { grid-template-columns: 1fr; text-align: center; }
-  .logo-container { flex-wrap: wrap; gap: 3rem; }
+
+  /* Location */
+  .location { padding: 4rem 0; }
+  .location-content { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+  .location-text { padding-right: 0; }
+  .location-text h2 { font-size: 2.25rem; }
+
+  /* Vision Quote – disable parallax (broken on mobile browsers) */
+  .vision-quote { padding: 6rem 0; background-attachment: scroll; }
+  .vision-content blockquote { font-size: 1.5rem; }
+
+  /* Brand */
+  .logo-container { flex-wrap: wrap; gap: 2rem; }
+
+  /* Conversion */
+  .conversion { padding: 4rem 0; }
+  .conversion h2 { font-size: 2rem; }
+}
+
+/* ── Small Mobile ── */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero .tagline { letter-spacing: 0.15em; margin-bottom: 1.5rem; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
+  .amenities-grid { grid-template-columns: 1fr; }
+
+  .detail-card { padding-left: 1.25rem; }
+  .detail-card h3 { font-size: 1.25rem; }
+
+  .vision-content blockquote { font-size: 1.25rem; }
+  .conversion h2 { font-size: 1.75rem; }
+
+  p { font-size: 1rem; }
 }
